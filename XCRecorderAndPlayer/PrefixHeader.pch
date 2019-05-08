@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  XCRecorderAndPlayer
+//
+//  Created by xiao can on 2019/5/8.
+//  Copyright © 2019 xiaocan. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import "OtherSource/SoundWaveView.h"
+#import "Model/XCRecorderModel.h"
+#import "Model/XCAudioPlayerModel.h"
+
+#endif
+
+#endif /* PrefixHeader_pch */
