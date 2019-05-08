@@ -149,6 +149,22 @@ NSString *const LocalRecorderDirectory = @"recorder";
     }
     return saveSuccess;
 }
++ (BOOL)deleteLoaclFile:(NSDictionary *)fileData{
+    NSArray *localData = [[NSUserDefaults standardUserDefaults] objectForKey:@"local_audios"];
+    NSMutableArray *localAudios = [NSMutableArray arrayWithCapacity:0];
+    if (localData) {
+        [localAudios addObjectsFromArray:localData];
+        [localAudios removeObject:fileData];
+    }
+    NSString *filePath = [self getLocalAudioFile:fileData[@"fileName"]];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager removeItemAtPath:filePath error:nil]) {
+        [[NSUserDefaults standardUserDefaults] setObject:localAudios forKey:@"local_audios"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
+    }
+    return NO;
+}
 + (NSString *)getLocalAudioFile:(NSString *)name{
     NSString *newPath = [[[XCRecorderModel shareInstance] recorderDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.caf",name]];
     return newPath;

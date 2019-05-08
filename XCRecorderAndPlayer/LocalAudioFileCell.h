@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LocalAudioFileCell : UITableViewCell
 
+@property (nonatomic, weak) UIViewController    *viewControl;
+
 @property (nonatomic, weak) IBOutlet UILabel    *xcTitle;
 @property (nonatomic, weak) IBOutlet UILabel    *xcTime;
 @property (nonatomic, weak) IBOutlet UIView     *xcWaveContent;

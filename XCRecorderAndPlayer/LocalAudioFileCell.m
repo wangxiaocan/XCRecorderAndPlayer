@@ -78,6 +78,16 @@
     }
 }
 
+- (IBAction)playOrStop:(UIButton *)sender{
+    XCAudioPlayerModel *playModel = [XCAudioPlayerModel shareInstance];
+    if (playModel.audioPlayer && [playModel.audioPlayer isPlaying] && [playModel.currentPlayFile containsString:self.audioData[@"fileName"]]) {
+        [XCAudioPlayerModel stop];
+        [_xcPlayBtn setImage:[UIImage imageNamed:@"Audio_Play"] forState:UIControlStateNormal];
+    }else{
+        [XCAudioPlayerModel playAudioWithFile:[XCRecorderModel getLocalAudioFile:self.audioData[@"fileName"]] withDelegate:_viewControl];
+    }
+}
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

@@ -73,6 +73,11 @@ NSString *const XCAudioPlayerModelPlaying = @"XCAudioPlayerModelPlaying";
     XCAudioPlayerModel *playModel = [XCAudioPlayerModel shareInstance];
     if (playModel.audioPlayer && [playModel.audioPlayer isPlaying]) {
         [playModel.audioPlayer stop];
+        playModel.currentPlayFile = nil;
+        [[AVAudioSession sharedInstance] setActive:NO withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+        if (playModel.playModelDelegate && [playModel.playModelDelegate respondsToSelector:@selector(xcAudioPlayerModelPlayComplete:)]) {
+            [playModel.playModelDelegate xcAudioPlayerModelPlayComplete:playModel];
+        }
     }
 }
 

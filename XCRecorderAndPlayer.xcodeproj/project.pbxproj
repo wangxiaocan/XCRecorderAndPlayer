@@ -29,6 +29,8 @@
 		72E44D812282C9B900623C5F /* Audio_Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7D2282C9B900623C5F /* Audio_Play@2x.png */; };
 		72E44D822282C9B900623C5F /* Audio_Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7E2282C9B900623C5F /* Audio_Pause@2x.png */; };
 		72E44D832282C9B900623C5F /* Audio_Play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7F2282C9B900623C5F /* Audio_Play@3x.png */; };
+		72E44D862283230600623C5F /* play.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D842283230500623C5F /* play.gif */; };
+		72E44D872283230600623C5F /* record.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D852283230500623C5F /* record.gif */; };
 		BCCDA351DDF5315D10D63E88 /* libPods-XCRecorderAndPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218F784B457F17B0AF8D069F /* libPods-XCRecorderAndPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		72E44D7D2282C9B900623C5F /* Audio_Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Play@2x.png"; sourceTree = "<group>"; };
 		72E44D7E2282C9B900623C5F /* Audio_Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Pause@2x.png"; sourceTree = "<group>"; };
 		72E44D7F2282C9B900623C5F /* Audio_Play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Play@3x.png"; sourceTree = "<group>"; };
+		72E44D842283230500623C5F /* play.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = play.gif; sourceTree = "<group>"; };
+		72E44D852283230500623C5F /* record.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = record.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 		72E44D5922826BA800623C5F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				72E44D842283230500623C5F /* play.gif */,
+				72E44D852283230500623C5F /* record.gif */,
 				72E44D7E2282C9B900623C5F /* Audio_Pause@2x.png */,
 				72E44D7C2282C9B900623C5F /* Audio_Pause@3x.png */,
 				72E44D7D2282C9B900623C5F /* Audio_Play@2x.png */,
@@ -245,6 +251,8 @@
 				72E44D5022826B5500623C5F /* LaunchScreen.storyboard in Resources */,
 				72E44D4D22826B5500623C5F /* Assets.xcassets in Resources */,
 				72E44D5E22826CDF00623C5F /* Recorder@2x.png in Resources */,
+				72E44D862283230600623C5F /* play.gif in Resources */,
+				72E44D872283230600623C5F /* record.gif in Resources */,
 				72E44D4B22826B5300623C5F /* Main.storyboard in Resources */,
 				72E44D782282C0B500623C5F /* LocalAudioFileCell.xib in Resources */,
 				72E44D6122826CDF00623C5F /* Recorder@3x.png in Resources */,

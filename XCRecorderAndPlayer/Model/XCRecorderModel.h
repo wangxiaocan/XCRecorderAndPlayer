@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)saveAudioFile:(NSString *)cacheFile withNewName:(NSString *)name;
 + (NSString *)getLocalAudioFile:(NSString *)name;
++ (BOOL)deleteLoaclFile:(NSDictionary *)fileData;
 
 @end
 

@@ -24,6 +24,9 @@
                             <constraint firstAttribute="width" constant="40" id="ilJ-1w-YoP"/>
                             <constraint firstAttribute="width" secondItem="G9t-4J-MZV" secondAttribute="height" id="tsK-c5-lyo"/>
                         </constraints>
+                        <connections>
+                            <action selector="playOrStop:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vnO-js-9FW"/>
+                        </connections>
                     </button>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TBJ-uL-58L">
                         <rect key="frame" x="15" y="91.5" width="327" height="1"/>

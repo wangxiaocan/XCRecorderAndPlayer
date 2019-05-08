@@ -61,36 +61,44 @@
     
 }
 - (void)xCRecorderModelComplete:(XCRecorderModel *)model withRecorder:(AVAudioRecorder *)recorder andRecorderAudioFile:(NSString *)audioFilePath{
+    __strong NSString *weakFile = audioFilePath;
+    __weak typeof(self) weakSelf = self;
     UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:@"录制结束，是否保存音频文件？" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertControl addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"输入新的音频名称";
     }];
     UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
+        weakSelf.recorderTimeLabel.text = @"00:00:00";
     }];
-    
-    __strong NSString *weakFile = audioFilePath;
-    __weak typeof(self) weakSelf = self;
     UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UITextField *field = [alertControl textFields][0];
+        [ProgressHUD show:@"保存中..." Interaction:NO];
         if ([XCRecorderModel saveAudioFile:weakFile withNewName:field.text]) {
             [weakSelf refreshLocalAudioFileData];
+            [ProgressHUD showSuccess:@"保存成功" Interaction:NO];
+        }else{
+            [ProgressHUD showError:@"保存失败" Interaction:NO];
         }
+        weakSelf.recorderTimeLabel.text = @"00:00:00";
     }];
     [alertControl addAction:cancle];
     [alertControl addAction:save];
     [self presentViewController:alertControl animated:YES completion:nil];
 }
 - (void)xCRecorderModelRecordFaild:(XCRecorderModel *)model withRecorder:(AVAudioRecorder *)recorder{
-    
+    _recorderTimeLabel.text = @"00:00:00";
 }
 
 - (void)xCRecorderModelValuesChanged:(XCRecorderModel *)model withRecorder:(AVAudioRecorder *)recorder{
-    NSTimeInterval currentTime = [recorder currentTime];
-    NSInteger hour = currentTime / 3600;
-    NSInteger minute = (currentTime - hour * 3600) / 60;
-    NSInteger second = currentTime - hour * 3600 - minute * 60;
-    _recorderTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hour,minute,second];
+    if ([recorder isRecording]) {
+        NSTimeInterval currentTime = [recorder currentTime];
+        NSInteger hour = currentTime / 3600;
+        NSInteger minute = (currentTime - hour * 3600) / 60;
+        NSInteger second = currentTime - hour * 3600 - minute * 60;
+        _recorderTimeLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",hour,minute,second];
+    }else{
+        _recorderTimeLabel.text = @"00:00:00";
+    }
 }
 
 - (CGFloat)getCurrentSoundWaveValue:(SoundWaveView *)saveView{
@@ -167,8 +175,36 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LocalAudioFileCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LocalAudioFileCell class]) forIndexPath:indexPath];
+    cell.viewControl = self;
     [cell setAudioData:self.localAudioFiles[indexPath.row]];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        __weak NSDictionary *weakData = self.localAudioFiles[indexPath.row];
+        __weak typeof(self) weakSelf = self;
+        UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:@"删除本地录音文件" message:weakData[@"name"] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [ProgressHUD show:@"删除中..." Interaction:NO];
+            if ([XCRecorderModel deleteLoaclFile:weakData]) {
+                [ProgressHUD showSuccess:@"录音文件已删除" Interaction:NO];
+                [weakSelf refreshLocalAudioFileData];
+            }else{
+                [ProgressHUD showError:@"删除失败" Interaction:NO];
+            }
+        }];
+        [alertControl addAction:delete];
+        [alertControl addAction:cancle];
+        [self presentViewController:alertControl animated:YES completion:nil];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -178,14 +214,6 @@
 - (void)audioPlayStatusChanged{
     [[NSNotificationCenter defaultCenter] postNotificationName:XCAudioPlayerModelPlaying object:nil userInfo:@{@"waveView":self.cellSoundView}];
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *audioData = self.localAudioFiles[indexPath.row];
-    NSString *filePath = [XCRecorderModel getLocalAudioFile:audioData[@"fileName"]];
-    [XCAudioPlayerModel playAudioWithFile:filePath withDelegate:self];
-}
-
-
 
 
 @end
