@@ -176,7 +176,7 @@
 }
 
 - (void)audioPlayStatusChanged{
-    [[NSNotificationCenter defaultCenter] postNotificationName:XCAudioPlayerModelPlaying object:nil userInfo:@{@"waveView":self.waveView}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:XCAudioPlayerModelPlaying object:nil userInfo:@{@"waveView":self.cellSoundView}];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

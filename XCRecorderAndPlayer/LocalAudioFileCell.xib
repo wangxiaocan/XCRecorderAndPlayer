@@ -18,13 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="357" height="92.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2F-pN-5hn">
-                        <rect key="frame" x="15" y="92" width="327" height="0.5"/>
-                        <color key="backgroundColor" white="0.77547980878995426" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="0.5" id="9qd-2j-UgG"/>
-                        </constraints>
-                    </view>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9t-4J-MZV">
                         <rect key="frame" x="307" y="26.5" width="40" height="40"/>
                         <constraints>
@@ -32,12 +25,17 @@
                             <constraint firstAttribute="width" secondItem="G9t-4J-MZV" secondAttribute="height" id="tsK-c5-lyo"/>
                         </constraints>
                     </button>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TBJ-uL-58L">
-                        <rect key="frame" x="15" y="90.5" width="327" height="2"/>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TBJ-uL-58L">
+                        <rect key="frame" x="15" y="91.5" width="327" height="1"/>
+                        <color key="tintColor" red="0.97555117679731496" green="0.17327585424376676" blue="0.15343765193720618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="f9g-mo-aKT"/>
+                        </constraints>
+                        <color key="trackTintColor" white="0.72412778253424659" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </progressView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nho-2F-a2l">
-                        <rect key="frame" x="231" y="0.0" width="71" height="92"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="231" y="0.0" width="71" height="91.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="71" id="7mF-W3-Vwh"/>
                         </constraints>
@@ -71,23 +69,21 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="S2F-pN-5hn" firstAttribute="top" secondItem="nho-2F-a2l" secondAttribute="bottom" id="21k-Pl-6G3"/>
+                    <constraint firstAttribute="bottom" secondItem="TBJ-uL-58L" secondAttribute="bottom" id="2QG-vS-CpV"/>
                     <constraint firstItem="nho-2F-a2l" firstAttribute="leading" secondItem="iFn-lE-Z1O" secondAttribute="trailing" constant="5" id="4o5-vz-Oxu"/>
-                    <constraint firstAttribute="bottom" secondItem="S2F-pN-5hn" secondAttribute="bottom" id="D3Z-l7-hN1"/>
                     <constraint firstItem="G9t-4J-MZV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FBx-F0-YFz"/>
-                    <constraint firstAttribute="trailing" secondItem="S2F-pN-5hn" secondAttribute="trailing" constant="15" id="Fgi-or-iqY"/>
-                    <constraint firstItem="TBJ-uL-58L" firstAttribute="bottom" secondItem="S2F-pN-5hn" secondAttribute="bottom" id="JxX-0b-Qo9"/>
-                    <constraint firstItem="TBJ-uL-58L" firstAttribute="trailing" secondItem="S2F-pN-5hn" secondAttribute="trailing" id="MFp-YZ-THY"/>
+                    <constraint firstAttribute="trailing" secondItem="TBJ-uL-58L" secondAttribute="trailing" constant="15" id="G6S-hH-3rx"/>
                     <constraint firstItem="iFn-lE-Z1O" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Mk6-5z-2yw"/>
-                    <constraint firstItem="S2F-pN-5hn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Os2-1K-vNJ"/>
                     <constraint firstAttribute="trailing" secondItem="G9t-4J-MZV" secondAttribute="trailing" constant="10" id="Tui-d2-Fjx"/>
                     <constraint firstItem="iFn-lE-Z1O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="X0x-hA-GeE"/>
                     <constraint firstItem="nho-2F-a2l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gX3-zw-mwy"/>
-                    <constraint firstItem="TBJ-uL-58L" firstAttribute="leading" secondItem="S2F-pN-5hn" secondAttribute="leading" id="jnH-Kj-5gl"/>
+                    <constraint firstItem="TBJ-uL-58L" firstAttribute="top" secondItem="nho-2F-a2l" secondAttribute="bottom" id="l82-3A-vc5"/>
                     <constraint firstItem="G9t-4J-MZV" firstAttribute="leading" secondItem="nho-2F-a2l" secondAttribute="trailing" constant="5" id="v2R-AD-k1g"/>
+                    <constraint firstItem="TBJ-uL-58L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vfH-ul-e5R"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="playProgress" destination="TBJ-uL-58L" id="wzL-dB-bwM"/>
                 <outlet property="xcPlayBtn" destination="G9t-4J-MZV" id="xDV-Gg-M6w"/>
                 <outlet property="xcTime" destination="qBG-Ed-HRP" id="bFv-Qh-4C5"/>
                 <outlet property="xcTitle" destination="12q-5H-GWT" id="EVG-zn-YAH"/>

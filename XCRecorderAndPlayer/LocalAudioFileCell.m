@@ -56,13 +56,21 @@
     XCAudioPlayerModel *playModel = [XCAudioPlayerModel shareInstance];
     SoundWaveView *waveView = [notifi.userInfo objectForKey:@"waveView"];
     BOOL currentCell = NO;
-    if (playModel.currentPlayFile && [playModel.currentPlayFile containsString:self.fileName]) {
+    if (playModel.audioPlayer && [playModel.audioPlayer isPlaying] && playModel.currentPlayFile && [playModel.currentPlayFile containsString:self.fileName]) {
         currentCell = YES;
     }
-    [_xcPlayBtn setImage:[UIImage imageNamed:@"Audio_Play"] forState:UIControlStateNormal];
     if (currentCell) {
+        _playProgress.progress = playModel.audioPlayer.currentTime / playModel.audioPlayer.duration;
         [_xcPlayBtn setImage:[UIImage imageNamed:@"Audio_Pause"] forState:UIControlStateNormal];
+        if (![self.xcWaveContent.subviews containsObject:waveView]) {
+            [self.xcWaveContent addSubview:waveView];
+            [waveView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.center.equalTo(self.xcWaveContent);
+            }];
+        }
     }else{
+        _playProgress.progress = 0;
+        [_xcPlayBtn setImage:[UIImage imageNamed:@"Audio_Play"] forState:UIControlStateNormal];
         NSArray *views = [self.xcWaveContent subviews];
         for (UIView *subView in views) {
             [subView removeFromSuperview];

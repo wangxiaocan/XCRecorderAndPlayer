@@ -50,6 +50,7 @@ CGFloat const  LineLeftSpace = 2.0;
 
 - (void)initWaveView{
     self.clipsToBounds = YES;
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [self soundWaveViewWidth], [self soundWaveViewHeight]);
     [self redrawView];
     [self refreshWaveValue];
 }
