@@ -11,7 +11,7 @@
 
 CGFloat const SoundWaveValuesNum = 10;
 CGFloat const SoundWaveMinumValue = 10.0;
-CGFloat const SoundWaveMaxValue = 60;
+CGFloat const SoundWaveMaxValue = 20;
 
 CGFloat const  LineSpace = 3.0;
 CGFloat const  LineWidth = 4.0;
@@ -62,14 +62,16 @@ CGFloat const  LineLeftSpace = 2.0;
     if (self.soundWaveViewDelegate && [self.soundWaveViewDelegate respondsToSelector:@selector(getCurrentSoundWaveValue:)]) {
         [self addSoundWaveValue:[self.soundWaveViewDelegate getCurrentSoundWaveValue:self]];
     }else{
-        [self addSoundWaveValue:0];
+        //[self addSoundWaveValue:0];
     }
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshWaveValue) object:self];
     [self performSelector:@selector(refreshWaveValue) withObject:self afterDelay:0.1];
 }
 
 - (void)addSoundWaveValue:(float)value{
-    if (value < SoundWaveMinumValue) {
+    if (value < 0) {
+        value = SoundWaveMinumValue;
+    }else if (value < SoundWaveMinumValue) {
         value = random() % 3 + SoundWaveMinumValue;
     }else if (value > SoundWaveMaxValue) {
         value = SoundWaveMaxValue;

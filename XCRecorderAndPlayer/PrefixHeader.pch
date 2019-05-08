@@ -13,10 +13,46 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+
+#import <ProgressHUD/ProgressHUD.h>
+#import <Masonry/Masonry.h>
+
+#import "Model/BaseEncryption.h"
+
 #import "OtherSource/SoundWaveView.h"
 #import "Model/XCRecorderModel.h"
 #import "Model/XCAudioPlayerModel.h"
 
+
+
+
+
+
+
+
+
+
+#define POWER_TO_DB(power)  ({\
+    float vlume = power + 160 - 50;\
+    int dB = 0;\
+    if (vlume < 0.f) {\
+        dB = 0;\
+    } else if (vlume < 40.f) {\
+        dB = (int)(vlume * 0.875);\
+    } else if (vlume < 100.f) {\
+        dB = (int)(vlume - 15);\
+    } else if (vlume < 110.f) {\
+        dB = (int)(vlume * 2.5 - 165);\
+    } else {\
+        dB = 110;\
+    }\
+    dB;\
+})
+
 #endif
+
+
+
+
 
 #endif /* PrefixHeader_pch */

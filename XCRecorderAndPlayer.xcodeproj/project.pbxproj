@@ -21,9 +21,21 @@
 		72E44D6822826F7C00623C5F /* SoundWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E44D6722826F7C00623C5F /* SoundWaveView.m */; };
 		72E44D6B228280C400623C5F /* XCRecorderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E44D6A228280C400623C5F /* XCRecorderModel.m */; };
 		72E44D6F228281C600623C5F /* XCAudioPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E44D6E228281C600623C5F /* XCAudioPlayerModel.m */; };
+		72E44D732282BE8F00623C5F /* BaseEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E44D712282BE8F00623C5F /* BaseEncryption.m */; };
+		72E44D772282C0B500623C5F /* LocalAudioFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E44D752282C0B500623C5F /* LocalAudioFileCell.m */; };
+		72E44D782282C0B500623C5F /* LocalAudioFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D762282C0B500623C5F /* LocalAudioFileCell.xib */; };
+		72E44D7B2282C5EA00623C5F /* LocalAudioHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E44D7A2282C5EA00623C5F /* LocalAudioHeader.m */; };
+		72E44D802282C9B900623C5F /* Audio_Pause@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7C2282C9B900623C5F /* Audio_Pause@3x.png */; };
+		72E44D812282C9B900623C5F /* Audio_Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7D2282C9B900623C5F /* Audio_Play@2x.png */; };
+		72E44D822282C9B900623C5F /* Audio_Pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7E2282C9B900623C5F /* Audio_Pause@2x.png */; };
+		72E44D832282C9B900623C5F /* Audio_Play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72E44D7F2282C9B900623C5F /* Audio_Play@3x.png */; };
+		BCCDA351DDF5315D10D63E88 /* libPods-XCRecorderAndPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218F784B457F17B0AF8D069F /* libPods-XCRecorderAndPlayer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		218F784B457F17B0AF8D069F /* libPods-XCRecorderAndPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XCRecorderAndPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		590889072540A5D6657B2AA6 /* Pods-XCRecorderAndPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCRecorderAndPlayer.release.xcconfig"; path = "Target Support Files/Pods-XCRecorderAndPlayer/Pods-XCRecorderAndPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		6C50D17A061F64B5452E5D11 /* Pods-XCRecorderAndPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCRecorderAndPlayer.debug.xcconfig"; path = "Target Support Files/Pods-XCRecorderAndPlayer/Pods-XCRecorderAndPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		72E44D4022826B5300623C5F /* XCRecorderAndPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCRecorderAndPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E44D4322826B5300623C5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72E44D4422826B5300623C5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -46,6 +58,17 @@
 		72E44D6D228281C600623C5F /* XCAudioPlayerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCAudioPlayerModel.h; sourceTree = "<group>"; };
 		72E44D6E228281C600623C5F /* XCAudioPlayerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCAudioPlayerModel.m; sourceTree = "<group>"; };
 		72E44D70228281EB00623C5F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		72E44D712282BE8F00623C5F /* BaseEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseEncryption.m; sourceTree = "<group>"; };
+		72E44D722282BE8F00623C5F /* BaseEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseEncryption.h; sourceTree = "<group>"; };
+		72E44D742282C0B500623C5F /* LocalAudioFileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalAudioFileCell.h; sourceTree = "<group>"; };
+		72E44D752282C0B500623C5F /* LocalAudioFileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalAudioFileCell.m; sourceTree = "<group>"; };
+		72E44D762282C0B500623C5F /* LocalAudioFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocalAudioFileCell.xib; sourceTree = "<group>"; };
+		72E44D792282C5EA00623C5F /* LocalAudioHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalAudioHeader.h; sourceTree = "<group>"; };
+		72E44D7A2282C5EA00623C5F /* LocalAudioHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalAudioHeader.m; sourceTree = "<group>"; };
+		72E44D7C2282C9B900623C5F /* Audio_Pause@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Pause@3x.png"; sourceTree = "<group>"; };
+		72E44D7D2282C9B900623C5F /* Audio_Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Play@2x.png"; sourceTree = "<group>"; };
+		72E44D7E2282C9B900623C5F /* Audio_Pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Pause@2x.png"; sourceTree = "<group>"; };
+		72E44D7F2282C9B900623C5F /* Audio_Play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Audio_Play@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E44D6422826E1400623C5F /* AVFoundation.framework in Frameworks */,
+				BCCDA351DDF5315D10D63E88 /* libPods-XCRecorderAndPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +90,7 @@
 				72E44D4222826B5300623C5F /* XCRecorderAndPlayer */,
 				72E44D4122826B5300623C5F /* Products */,
 				72E44D6222826E1400623C5F /* Frameworks */,
+				C99CE71C4EAB22986F7EF6E0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +118,11 @@
 				72E44D5122826B5500623C5F /* Info.plist */,
 				72E44D5222826B5500623C5F /* main.m */,
 				72E44D70228281EB00623C5F /* PrefixHeader.pch */,
+				72E44D742282C0B500623C5F /* LocalAudioFileCell.h */,
+				72E44D752282C0B500623C5F /* LocalAudioFileCell.m */,
+				72E44D762282C0B500623C5F /* LocalAudioFileCell.xib */,
+				72E44D792282C5EA00623C5F /* LocalAudioHeader.h */,
+				72E44D7A2282C5EA00623C5F /* LocalAudioHeader.m */,
 			);
 			path = XCRecorderAndPlayer;
 			sourceTree = "<group>";
@@ -100,6 +130,10 @@
 		72E44D5922826BA800623C5F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				72E44D7E2282C9B900623C5F /* Audio_Pause@2x.png */,
+				72E44D7C2282C9B900623C5F /* Audio_Pause@3x.png */,
+				72E44D7D2282C9B900623C5F /* Audio_Play@2x.png */,
+				72E44D7F2282C9B900623C5F /* Audio_Play@3x.png */,
 				72E44D5C22826CDF00623C5F /* Recorder_Stop@2x.png */,
 				72E44D5B22826CDF00623C5F /* Recorder_Stop@3x.png */,
 				72E44D5A22826CDF00623C5F /* Recorder@2x.png */,
@@ -112,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				72E44D6322826E1400623C5F /* AVFoundation.framework */,
+				218F784B457F17B0AF8D069F /* libPods-XCRecorderAndPlayer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,8 +167,19 @@
 				72E44D6A228280C400623C5F /* XCRecorderModel.m */,
 				72E44D6D228281C600623C5F /* XCAudioPlayerModel.h */,
 				72E44D6E228281C600623C5F /* XCAudioPlayerModel.m */,
+				72E44D722282BE8F00623C5F /* BaseEncryption.h */,
+				72E44D712282BE8F00623C5F /* BaseEncryption.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C99CE71C4EAB22986F7EF6E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C50D17A061F64B5452E5D11 /* Pods-XCRecorderAndPlayer.debug.xcconfig */,
+				590889072540A5D6657B2AA6 /* Pods-XCRecorderAndPlayer.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E44D5622826B5500623C5F /* Build configuration list for PBXNativeTarget "XCRecorderAndPlayer" */;
 			buildPhases = (
+				519C1A4D30CDA643121B6064 /* [CP] Check Pods Manifest.lock */,
 				72E44D3C22826B5300623C5F /* Sources */,
 				72E44D3D22826B5300623C5F /* Frameworks */,
 				72E44D3E22826B5300623C5F /* Resources */,
+				AFB425E3257F2BDA023FDC58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,17 +241,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E44D802282C9B900623C5F /* Audio_Pause@3x.png in Resources */,
 				72E44D5022826B5500623C5F /* LaunchScreen.storyboard in Resources */,
 				72E44D4D22826B5500623C5F /* Assets.xcassets in Resources */,
 				72E44D5E22826CDF00623C5F /* Recorder@2x.png in Resources */,
 				72E44D4B22826B5300623C5F /* Main.storyboard in Resources */,
+				72E44D782282C0B500623C5F /* LocalAudioFileCell.xib in Resources */,
 				72E44D6122826CDF00623C5F /* Recorder@3x.png in Resources */,
+				72E44D812282C9B900623C5F /* Audio_Play@2x.png in Resources */,
 				72E44D6022826CDF00623C5F /* Recorder_Stop@2x.png in Resources */,
+				72E44D822282C9B900623C5F /* Audio_Pause@2x.png in Resources */,
+				72E44D832282C9B900623C5F /* Audio_Play@3x.png in Resources */,
 				72E44D5F22826CDF00623C5F /* Recorder_Stop@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		519C1A4D30CDA643121B6064 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XCRecorderAndPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFB425E3257F2BDA023FDC58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XCRecorderAndPlayer/Pods-XCRecorderAndPlayer-resources.sh",
+				"${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XCRecorderAndPlayer/Pods-XCRecorderAndPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72E44D3C22826B5300623C5F /* Sources */ = {
@@ -213,7 +313,10 @@
 				72E44D4822826B5300623C5F /* ViewController.m in Sources */,
 				72E44D6B228280C400623C5F /* XCRecorderModel.m in Sources */,
 				72E44D6822826F7C00623C5F /* SoundWaveView.m in Sources */,
+				72E44D7B2282C5EA00623C5F /* LocalAudioHeader.m in Sources */,
 				72E44D5322826B5500623C5F /* main.m in Sources */,
+				72E44D772282C0B500623C5F /* LocalAudioFileCell.m in Sources */,
+				72E44D732282BE8F00623C5F /* BaseEncryption.m in Sources */,
 				72E44D6F228281C600623C5F /* XCAudioPlayerModel.m in Sources */,
 				72E44D4522826B5300623C5F /* AppDelegate.m in Sources */,
 			);
@@ -355,6 +458,7 @@
 		};
 		72E44D5722826B5500623C5F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C50D17A061F64B5452E5D11 /* Pods-XCRecorderAndPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,6 +478,7 @@
 		};
 		72E44D5822826B5500623C5F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590889072540A5D6657B2AA6 /* Pods-XCRecorderAndPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
